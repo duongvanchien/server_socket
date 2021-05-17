@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^4.1.1"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "name": "server-socket",
+  "version": "0.0.1",
+  "description": "đây là server socket thử nghiệm",
+  "main": "index.js",
+  "author": "Dương Văn Chiến",
+  "license": "MIT"
+}
