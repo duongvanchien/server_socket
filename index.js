@@ -7,6 +7,8 @@ app.use(
 	})
 );
 
+const listmsg = [];
+
 var http = require('http').createServer(app);
 const PORT = 8080;
 var io = require('socket.io')(http);
@@ -15,7 +17,11 @@ http.listen(PORT, () => {
 });
 
 io.on('connection', (socket) => {
-	/* socket object may be used to send specific messages to the new connected client */
-	socket.emit('hello', 'world');
-	console.log('new client connected', socket.id);
+	socket.on('chat', (msg) => {
+		listmsg.push(msg);
+		Array.isArray(listmsg) &&
+        listmsg.forEach((value) => { 
+				console.log(value);
+			});
+	});
 });
